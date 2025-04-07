@@ -1,0 +1,71 @@
+{
+  "3": {
+    "inputs": {
+      "image": "",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "37": {
+    "inputs": {
+      "prompt": "Professional headshot of a confident businesswoman with light natural makeup, warm smile, and relaxed posture. Standing with one hand on hip. Hair styled neatly. Wearing a fitted navy blue cashmere turtleneck sweater and high-waisted wide leg wool trousers. Studio portrait with soft professional lighting setup using 3-point lighting technique. Clean white brick wall background with subtle texture. Shallow depth of field with crisp focus on face. Shot on Canon EOS R5, 85mm f/1.2 lens. 4K resolution, photorealistic, ultra-detailed commercial photography.",
+      "negative_prompt": "nsfw, nudity, naked, deformed, ugly, horror, watermark, text, artist signature, signed, low-quality, lowres, blurry, out of focus, overexposed, underexposed, poorly lit, bad lighting, bad composition, bad framing, bad angle, bad perspective, bad proportions, bad anatomy, bad colors, bad contrast",
+      "seed": 2,
+      "guidance_scale": 3.5,
+      "image_guidance_scale": 1.1,
+      "text_guidance_scale": 1,
+      "num_inference_steps": 20,
+      "width": 1024,
+      "height": 512,
+      "use_gemini_prompt": false,
+      "dsd_model": ["43", 0],
+      "image": ["3", 0],
+      "resize_params": ["39", 0]
+    },
+    "class_type": "DSDImageGenerator",
+    "_meta": {
+      "title": "DSD Image Generator"
+    }
+  },
+  "39": {
+    "inputs": {
+      "resize_method": "resize_and_center_crop",
+      "interpolation": "LANCZOS",
+      "pad_r": 0,
+      "pad_g": 0,
+      "pad_b": 0
+    },
+    "class_type": "DSDResizeSelector",
+    "_meta": {
+      "title": "DSD Resize Selector"
+    }
+  },
+  "43": {
+    "inputs": {
+      "model_path": "ComfyUI/models/dsd_model/transformer/diffusion_pytorch_model.safetensors",
+      "lora_path": "",
+      "device": "cuda",
+      "dtype": "bfloat16",
+      "low_cpu_mem_usage": true,
+      "model_cpu_offload": true,
+      "sequential_cpu_offload": true
+    },
+    "class_type": "DSDModelLoader",
+    "_meta": {
+      "title": "DSD Model Loader"
+    }
+  },
+  "44": {
+    "inputs": {
+      "filename_prefix": "dsd_linkedin_headshot",
+      "images": ["37", 0]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}
