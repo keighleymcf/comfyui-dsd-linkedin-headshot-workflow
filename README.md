@@ -1,6 +1,6 @@
 # Comfyui DSD Linkedin Headshot Workflow
 
-This is a draft [comfyui](https://github.com/comfyanonymous/ComfyUI) AI image generation workflow for creating professional portraits (e.g. for Linkedin) with a Diffusion Self-Distillation model. This workflow is a work in progress.
+This is a draft [comfyui](https://github.com/comfyanonymous/ComfyUI) AI image generation workflow for creating professional portraits (e.g. for Linkedin) with a [Diffusion Self-Distillation model](https://huggingface.co/primecai/dsd_model). This workflow is a work in progress.
 It uses nodes from [Comfyui-DSD](https://github.com/irreveloper/ComfyUI-DSD)
 
 ## Setup
