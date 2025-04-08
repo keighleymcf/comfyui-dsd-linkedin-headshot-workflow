@@ -1,14 +1,189 @@
 {
-  "last_node_id": 45,
+  "last_node_id": 46,
   "last_link_id": 8,
   "nodes": [
     {
+      "id": 39,
+      "type": "DSDResizeSelector",
+      "pos": [
+        94.79534149169922,
+        631.5745849609375
+      ],
+      "size": [
+        315,
+        154
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "resize_params",
+          "type": "RESIZE_PARAMS",
+          "links": [
+            7
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "dsd",
+        "ver": "6af416966bdc6373c402079289661f37e8070061",
+        "Node name for S&R": "DSDResizeSelector"
+      },
+      "widgets_values": [
+        "resize_and_center_crop",
+        "LANCZOS",
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 3,
+      "type": "LoadImage",
+      "pos": [
+        95.03289031982422,
+        265.9012451171875
+      ],
+      "size": [
+        315,
+        314
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            6
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.18",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "openart-image_WlZRswGk_1744056075732_raw.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 43,
+      "type": "DSDModelLoader",
+      "pos": [
+        94.00886535644531,
+        15.167181968688965
+      ],
+      "size": [
+        315,
+        202
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "dsd_model",
+          "type": "DSD_MODEL",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "dsd",
+        "ver": "6af416966bdc6373c402079289661f37e8070061",
+        "Node name for S&R": "DSDModelLoader"
+      },
+      "widgets_values": [
+        "ComfyUI/models/dsd_model/transformer/diffusion_pytorch_model.safetensors",
+        "",
+        "cuda",
+        "bfloat16",
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "id": 44,
+      "type": "SaveImage",
+      "pos": [
+        977.8139038085938,
+        14.523879051208496
+      ],
+      "size": [
+        433.8551940917969,
+        497.3186950683594
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 8
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.18",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "dsd_linkedin_headshot"
+      ]
+    },
+    {
+      "id": 46,
+      "type": "Note",
+      "pos": [
+        514.9175415039062,
+        16.9136905670166
+      ],
+      "size": [
+        392.15997314453125,
+        88
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "The top text field in this node is the positive prompt, the bottom one is the negative prompt (field labels are not visible when prefilled)"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
       "id": 37,
       "type": "DSDImageGenerator",
-      "pos": [515, 130],
-      "size": [400, 398],
+      "pos": [
+        515.3717041015625,
+        162.42750549316406
+      ],
+      "size": [
+        400,
+        398
+      ],
       "flags": {},
-      "order": 4,
+      "order": 5,
       "mode": 0,
       "inputs": [
         {
@@ -32,7 +207,9 @@
         {
           "name": "image",
           "type": "IMAGE",
-          "links": [8]
+          "links": [
+            8
+          ]
         },
         {
           "name": "reference_image",
@@ -54,7 +231,7 @@
         "Professional headshot of a confident businesswoman with light natural makeup, warm smile, and relaxed posture. Standing with one hand on hip. Hair styled neatly. Wearing a fitted navy blue cashmere turtleneck sweater and high-waisted wide leg wool trousers. Studio portrait with soft professional lighting setup using 3-point lighting technique. Clean white brick wall background with subtle texture. Shallow depth of field with crisp focus on face. Shot on Canon EOS R5, 85mm f/1.2 lens. 4K resolution, photorealistic, ultra-detailed commercial photography.",
         "nsfw, nudity, naked, deformed, ugly, horror, watermark, text, artist signature, signed",
         2,
-        "randomize",
+        "fixed",
         3.5,
         1.1,
         1,
@@ -65,140 +242,72 @@
       ]
     },
     {
-      "id": 39,
-      "type": "DSDResizeSelector",
-      "pos": [94.79534149169922, 631.5745849609375],
-      "size": [315, 154],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "resize_params",
-          "type": "RESIZE_PARAMS",
-          "links": [7]
-        }
-      ],
-      "properties": {
-        "cnr_id": "dsd",
-        "ver": "6af416966bdc6373c402079289661f37e8070061",
-        "Node name for S&R": "DSDResizeSelector"
-      },
-      "widgets_values": ["resize_and_center_crop", "LANCZOS", 0, 0, 0]
-    },
-    {
-      "id": 3,
-      "type": "LoadImage",
-      "pos": [95.03289031982422, 265.9012451171875],
-      "size": [315, 314],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [6]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.18",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": ["path/to/your/image.jpg", "image"]
-    },
-    {
-      "id": 43,
-      "type": "DSDModelLoader",
-      "pos": [94.00886535644531, 15.167181968688965],
-      "size": [315, 202],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "dsd_model",
-          "type": "DSD_MODEL",
-          "links": [5]
-        }
-      ],
-      "properties": {
-        "cnr_id": "dsd",
-        "ver": "6af416966bdc6373c402079289661f37e8070061",
-        "Node name for S&R": "DSDModelLoader"
-      },
-      "widgets_values": [
-        "ComfyUI/models/dsd_model/transformer/diffusion_pytorch_model.safetensors",
-        "",
-        "cuda",
-        "bfloat16",
-        true,
-        true,
-        true
-      ]
-    },
-    {
       "id": 45,
       "type": "MarkdownNote",
-      "pos": [-266.42584228515625, 21.202821731567383],
-      "size": [330.7716369628906, 727.71923828125],
+      "pos": [
+        -266.42584228515625,
+        21.202821731567383
+      ],
+      "size": [
+        330.7716369628906,
+        727.71923828125
+      ],
       "flags": {},
-      "order": 3,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [],
       "properties": {},
       "widgets_values": [
-        "# Comfyui DSD Linkedin Headshot Workflow\n\nThis is a draft [comfyui](https://github.com/comfyanonymous/ComfyUI) AI image generation workflow for creating professional portraits (e.g. for Linkedin) with a [Diffusion Self-Distillation model](https://huggingface.co/primecai/dsd_model). This workflow is a work in progress.\nIt uses nodes from [Comfyui-DSD](https://github.com/irreveloper/ComfyUI-DSD)\n\n## Setup\n\nFollow setup instructions for [comfyui](https://github.com/comfyanonymous/ComfyUI) and the [Comfyui-DSD](https://github.com/irreveloper/ComfyUI-DSD) nodes. The nodes can be installed via the comfyui Model Manager (search `Comfyui-DSD`)\n\nMake sure you have a DSD model downloaded to `ComfyUI/models/dsd_model/transformer/diffusion_pytorch_model.safetensors`, or alternatively you can use the DSD Model Downloader node instead to download the model when running the workflow.\n\n## Usage\n\nChoose a photo in the `Load Image` node. The workflow works best with images that show at least the upper body and face of the subject. It does not work well with close-cropped faces or selfies.\n\n## Troubleshooting\n\n### Input image adherence\n\nIf the output image does not adhere enough to the input image, try adjusting the `guidance_scale` or `image_guidance_scale`, or you can also try adding a DSD Gemini Prompt Enhancer node\n\nYou can also adjust the positive and negative prompt manually\n\n### Model load error\n\nIf you are getting the following error\n\n`DSDModelLoader:\nCannot load model black-forest-labs/FLUX.1-schnell: model is not cached locally and an error occurred while trying to fetch metadata from the Hub. Please check out the root cause in the stacktrace above.`\n\nCheck if your comfyui instance has access to your hugging face token in env vars (e.g. in runpod, it must be set in your pod's [env vars](https://docs.runpod.io/serverless/workers/vllm/environment-variables))\n\n## Github\n\n[Workflow and examples available here](https://github.com/keighleymcf/comfyui-dsd-linkedin-headshot-workflow)"
+        "# Comfyui DSD Linkedin Headshot Workflow\n\nThis is a draft [comfyui](https://github.com/comfyanonymous/ComfyUI) AI image generation workflow for creating professional portraits (e.g. for Linkedin) with a [Diffusion Self-Distillation model](https://huggingface.co/primecai/dsd_model). This workflow is a work in progress.\nIt uses nodes from [Comfyui-DSD](https://github.com/irreveloper/ComfyUI-DSD)\n\n## Setup\n\nFollow setup instructions for [comfyui](https://github.com/comfyanonymous/ComfyUI) and the [Comfyui-DSD](https://github.com/irreveloper/ComfyUI-DSD) nodes. The nodes can be installed via the comfyui Model Manager (search `Comfyui-DSD`). I built this with `Comfyui-DSD v1.0.2`. If you install a different version of the node package the workflow may break.\n\nMake sure you have a DSD model downloaded to `ComfyUI/models/dsd_model/transformer/diffusion_pytorch_model.safetensors`, or alternatively you can use the DSD Model Downloader node instead to download the model when running the workflow.\n\n## Usage\n\nChoose a photo in the `Load Image` node. The workflow works best with images that show at least the upper body and face of the subject. It does not work well with close-cropped faces or selfies.\n\n## Troubleshooting\n\n### Input image adherence\n\nIf the output image does not adhere enough to the input image, try adjusting the `guidance_scale` or `image_guidance_scale`, or you can also try adding a DSD Gemini Prompt Enhancer node\n\nYou can also adjust the positive and negative prompt manually\n\n### Model load error\n\nIf you are getting the following error\n\n`DSDModelLoader:\nCannot load model black-forest-labs/FLUX.1-schnell: model is not cached locally and an error occurred while trying to fetch metadata from the Hub. Please check out the root cause in the stacktrace above.`\n\nCheck if your comfyui instance has access to your hugging face token in env vars (e.g. in runpod, it must be set in your pod's [env vars](https://docs.runpod.io/serverless/workers/vllm/environment-variables))\n\n## Github\n\n[Workflow and examples available here](https://github.com/keighleymcf/comfyui-dsd-linkedin-headshot-workflow)"
       ],
       "color": "#432",
       "bgcolor": "#653"
-    },
-    {
-      "id": 44,
-      "type": "SaveImage",
-      "pos": [1015, 130.4222869873047],
-      "size": [315, 58],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 8
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.18",
-        "Node name for S&R": "SaveImage"
-      },
-      "widgets_values": ["dsd_linkedin_headshot"]
     }
   ],
   "links": [
-    [5, 43, 0, 37, 0, "DSD_MODEL"],
-    [6, 3, 0, 37, 1, "IMAGE"],
-    [7, 39, 0, 37, 2, "RESIZE_PARAMS"],
-    [8, 37, 0, 44, 0, "IMAGE"]
+    [
+      5,
+      43,
+      0,
+      37,
+      0,
+      "DSD_MODEL"
+    ],
+    [
+      6,
+      3,
+      0,
+      37,
+      1,
+      "IMAGE"
+    ],
+    [
+      7,
+      39,
+      0,
+      37,
+      2,
+      "RESIZE_PARAMS"
+    ],
+    [
+      8,
+      37,
+      0,
+      44,
+      0,
+      "IMAGE"
+    ]
   ],
   "groups": [],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.740024994425817,
-      "offset": [543.3853987730128, 96.48213063019662]
+      "scale": 0.683013455365071,
+      "offset": [
+        454.77687226562375,
+        123.56546249999984
+      ]
     },
     "ue_links": [],
     "VHS_latentpreview": false,

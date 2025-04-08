@@ -5,7 +5,7 @@ It uses nodes from [Comfyui-DSD](https://github.com/irreveloper/ComfyUI-DSD)
 
 ## Setup
 
-Follow setup instructions for [comfyui](https://github.com/comfyanonymous/ComfyUI) and the [Comfyui-DSD](https://github.com/irreveloper/ComfyUI-DSD) nodes. The nodes can be installed via the comfyui Model Manager (search `Comfyui-DSD`)
+Follow setup instructions for [comfyui](https://github.com/comfyanonymous/ComfyUI) and the [Comfyui-DSD](https://github.com/irreveloper/ComfyUI-DSD) nodes. The nodes can be installed via the comfyui Model Manager (search `Comfyui-DSD`). I built this with `Comfyui-DSD v1.0.2`. If you install a different version of the node package the workflow may be broken or incomplete.
 
 Make sure you have a DSD model downloaded to `ComfyUI/models/dsd_model/transformer/diffusion_pytorch_model.safetensors`, or alternatively you can use the DSD Model Downloader node instead to download the model when running the workflow.
 
@@ -32,7 +32,7 @@ Check if your comfyui instance has access to your hugging face token in env vars
 
 ## Example Workflow Result
 
-![Example Workflow Result](example-workflow-result.png)
+![Example Workflow Result](example-workflow-result_250408.png)
 
 ## Github
 
